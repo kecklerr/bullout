@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+<?php 
+include 'modules.php';
+?>
+
+<?php
+echo "<TABLE border=1 align=left cellpadding=1 cellspacing=0>
+<TR>
+<TD width=138 align=left><FONT face=Calibri size=2 color=#000000>&nbsp;</FONT></TD>
+<TD width=125 COLSPAN=2 align=center><FONT face=Calibri size=2 color=#000000>Matches</FONT></TD>
+<TD width=125 COLSPAN=2 align=center><FONT face=Calibri size=2 color=#000000>Legs</FONT></TD>
+</TR>
+<TR>
+<TD width=138 align=left><FONT face=Calibri size=2 color=#000000>&nbsp;</FONT></TD>
+<TD width=62 align=center><FONT face=Calibri size=2 color=#000000>Won</FONT></TD>
+<TD width=62 align=center><FONT face=Calibri size=2 color=#000000>Lost</FONT></TD>
+<TD width=62 align=center><FONT face=Calibri size=2 color=#000000>Won</FONT></TD>
+<TD width=62 align=center><FONT face=Calibri size=2 color=#000000>Lost</FONT></TD>
+</TR> ";
+$my_player_scores = get_current_payers_stats();
+foreach($my_player_scores as $value){
+
+echo "<tr><td>" . $value[name] . "</td>";
+echo "<td>" . $value[wins] . "</td>";
+echo "<td>" . $value[losses] . "</td>";
+echo "<td>" . $value[leg_wins] . "</td>";
+echo "<td>" . $value[leg_losses] . "</td>";
+
+#echo "<tr><td></td>";
+
+echo "</tr>";
+}
+
+echo "</table>";
+
+
+?>
+
+
+
+
+
+
+</body>
+</html>
+
