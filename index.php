@@ -21,7 +21,7 @@
                 <li><a href="/league_schedule.html">Schedule</a></li>
 	   <li><a href="/contactform.html">Contact</a></li>
                <li><a href="/about.html">About</a></li>
-               <li><a href="/insert_scores.php">Login</a></li>
+               <li><a href="/secure_login.php">Login</a></li>
             </ul>
             <h1>Brandon Singles Steel Dart League</h1>
         </div>

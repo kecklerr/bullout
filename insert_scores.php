@@ -38,7 +38,7 @@ and open the template in the editor.
                 <li><a href="#">Services</a></li>
                 <li><a href="#">About</a></li>
 -->                <li><a href="/contactform.html">Contact</a></li>
-		 <li><a href="/insert_scores.php">Login</a></li>
+		 <li><a href="/secure_login.php">Login</a></li>
             </ul>
             <h1>Brandon Singles Steel Dart League</h1>
         </div>
@@ -54,7 +54,7 @@ and open the template in the editor.
                 <div class="main_right">
 
         <?php
-        include 'modules.php';
+        include_once 'modules.php';
         ?>
         
         <form action="elo.php" method="post">

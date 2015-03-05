@@ -5,10 +5,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+$env = 'dev';
 
 function db_mysqli_connect(){
-    $mysqli = new mysqli('t80league.db.7600552.hostedresource.com', 't80league', 'R1yK2ckl2r!', 't80league');
-    
+	global $env;
+if($env == 'dev') {
+    $mysqli = new mysqli('localhost', 'root', 'fr4ju7', 't80league');
+} else if($env == 'prod') {
+	 $mysqli = new mysqli('t80league.db.7600552.hostedresource.com', 't80league', 'R1yK2ckl2r!', 't80league');
+}   
     if (mysqli_connect_errno()) {
         printf("Connect failed: %s\n", mysqli_connect_error());
         exit();
@@ -293,4 +298,17 @@ function sort_final_array($myarray) {
 	}
 	array_multisort($wins, SORT_DESC, $losses, SORT_ASC, $leg_wins, SORT_DESC, $leg_losses, SORT_ASC, $myarray);
 	return $myarray;
+}
+
+function insert_new_player($player){
+    $db = db_mysqli_connect();
+    $session = get_current_history_id();
+	$query = "insert into players (name,session) values ('" . $player . "', " . $session . ")";
+	mysqli_query($db, $query) or die(mysqli_error());
+    mysqli_close($db);
+	
+	$db = db_mysqli_connect();
+    $query = "insert into rating (name,rating) values ('" . $player . "', 1600)";
+	mysqli_query($db, $query) or die(mysqli_error());
+    mysqli_close($db);
 }

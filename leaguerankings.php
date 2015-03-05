@@ -51,7 +51,7 @@
 <!-- star the chance of winning section -->
 <p>Who would win?</p><br>
  <?php
-        include 'modules.php';
+        include_once 'modules.php';
         ?>
         <form action="leaguerankings.php" method="post">
         Darter 1 = <select name="player1_name">
@@ -146,7 +146,7 @@ if(is_string($player1_name)) {
 <br><br>
 <div class="CSSTableGenerator" >
  <?php
-        include 'modules.php';
+        include_once 'modules.php';
         ?>
         <table>
 	<tr>

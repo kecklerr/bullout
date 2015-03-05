@@ -218,6 +218,30 @@ text-decoration:none;
 color:#C9E1FA;
 }
 
+
+#login_screen ul {
+	list-style-type: circle;
+list-style-image: url("");
+list-style-position: inside;
+color:#FFFFFF;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#login_screen li, #login_screen ul li a, #login_screen ul li a:visited{
+	color:#FFFFFF;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	padding: 0px;
+margin: 0px;
+}
+
+#login_screen ul li a:hover{
+color:#C9E1FA;
+}
+
 .CSSTableGenerator {
 	margin:0px;padding:0px;
 	width:100%;
